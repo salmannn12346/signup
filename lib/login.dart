@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signup/Signupp.dart';
 
 class LoginUp extends StatefulWidget {
   const LoginUp({super.key});
@@ -29,7 +30,10 @@ class _LoginUpState extends State<LoginUp> {
                 Navigator.pop(context);
               }, child: Text("Login",style: TextStyle(fontSize: 20,color: Colors.white,),),style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent,elevation: 8),)),
               SizedBox(height: 30,),
-              Container(child: Row(children: [Text("Don't have an account?",style: TextStyle(fontSize: 17,),),Text("Sign up",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)],mainAxisAlignment: MainAxisAlignment.center,),),
+              Container(child: Row(children: [Text("Don't have an account?",style: TextStyle(fontSize: 17,),),TextButton(onPressed: (){ Navigator.push(context, MaterialPageRoute(builder:(context)=>SignUp()));},
+                child: Text("Sign up",
+                  style: TextStyle(color: Colors.black,fontSize: 21,fontWeight: FontWeight.bold),),
+              ),],mainAxisAlignment: MainAxisAlignment.center,),),
               Image(height:400,fit:BoxFit.fill,image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/005/879/539/small/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg"))
             ],
           ),
