@@ -2,5 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:signup/signn.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp( debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }

@@ -10,7 +10,8 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
-        body: Padding(
+    return Scaffold(
+       body: Padding(
           padding: const EdgeInsets.only(left: 700,right: 700),
           child: Center(
             child: Column(children: [
@@ -21,7 +22,7 @@ class _SignUpState extends State<SignUp> {
                 style: TextStyle(color: Colors.black,fontSize: 17),),
               SizedBox(height: 30,),
                Align(alignment:Alignment.topLeft,child: Text("username",style:TextStyle(fontWeight: FontWeight.bold),)),
-                decoration: InputDecoration(
+               TextField(decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -31,7 +32,7 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20,),
               Align(alignment:Alignment.topLeft,child: Text("Email",style:TextStyle(fontWeight: FontWeight.bold),)),
-                decoration: InputDecoration(
+            TextField( decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -41,7 +42,7 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20,),
               Align(alignment:Alignment.topLeft,child: Text("Password",style:TextStyle(fontWeight: FontWeight.bold),)),
-                decoration: InputDecoration(
+            TextField( decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -50,7 +51,7 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20,),
               Align(alignment:Alignment.topLeft,child: Text("Confirm Password",style:TextStyle(fontWeight: FontWeight.bold),)),
-                decoration: InputDecoration(
+              TextField(decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -59,6 +60,12 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               SizedBox(height: 80,),
+              SizedBox(width: 500,
+                height: 60,
+                child: ElevatedButton(onPressed: (){ Navigator.pop(context);}, child: Text(
+                  "Sign up",
+                  style: TextStyle(color: Colors.white, fontSize: 18),),style:ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent,foregroundColor: Colors.white) ,),
+              ),
               SizedBox(height: 80,),
               Padding(
                 padding: const EdgeInsets.only(left: 130),
