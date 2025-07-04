@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
                   },
                   child: Text(
                     "Sign up",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: 18, ),
                   ),
                 ),
                 decoration: BoxDecoration(

@@ -9,6 +9,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final TextEditingController usernameController =TextEditingController();
+  final TextEditingController emailController =TextEditingController();
+  final TextEditingController passwordController =TextEditingController();
+  final TextEditingController confirmPasswordController =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +27,8 @@ class _SignUpState extends State<SignUp> {
                 style: TextStyle(color: Colors.black,fontSize: 17),),
               SizedBox(height: 30,),
                Align(alignment:Alignment.topLeft,child: Text("username",style:TextStyle(fontWeight: FontWeight.bold),)),
-               TextField(decoration: InputDecoration(
+               TextField(controller: usernameController,
+                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -33,7 +38,8 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20,),
               Align(alignment:Alignment.topLeft,child: Text("Email",style:TextStyle(fontWeight: FontWeight.bold),)),
-            TextField( decoration: InputDecoration(
+            TextField( controller: emailController,
+              decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -43,7 +49,8 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20,),
               Align(alignment:Alignment.topLeft,child: Text("Password",style:TextStyle(fontWeight: FontWeight.bold),)),
-            TextField( decoration: InputDecoration(
+            TextField( controller: passwordController,
+              decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -52,7 +59,8 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20,),
               Align(alignment:Alignment.topLeft,child: Text("Confirm Password",style:TextStyle(fontWeight: FontWeight.bold),)),
-              TextField(decoration: InputDecoration(
+              TextField(controller: confirmPasswordController,
+                decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
