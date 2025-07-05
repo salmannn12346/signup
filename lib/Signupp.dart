@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:signup/login.dart';
+import 'package:signup/services.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -71,7 +72,10 @@ class _SignUpState extends State<SignUp> {
               SizedBox(height: 80,),
               SizedBox(width: 500,
                 height: 60,
-                child: ElevatedButton(onPressed: (){ Navigator.pop(context);}, child: Text(
+                child: ElevatedButton(onPressed: (){
+                  signup(name:usernameController.text,email: emailController.text,password: passwordController.text,confirmPassword: confirmPasswordController.text);
+                  Navigator.pop(context);
+                  }, child: Text(
                   "Sign up",
                   style: TextStyle(color: Colors.white, fontSize: 18),),style:ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent,foregroundColor: Colors.white) ,),
               ),
