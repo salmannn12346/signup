@@ -14,6 +14,12 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController emailController =TextEditingController();
   final TextEditingController passwordController =TextEditingController();
   final TextEditingController confirmPasswordController =TextEditingController();
+  void clear(){
+    usernameController.clear();
+    emailController.clear();
+    passwordController.clear();
+    confirmPasswordController.clear();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,8 +79,9 @@ class _SignUpState extends State<SignUp> {
               SizedBox(width: 500,
                 height: 60,
                 child: ElevatedButton(onPressed: (){
-                  signup(name:usernameController.text,email: emailController.text,password: passwordController.text,confirmPassword: confirmPasswordController.text);
-                  Navigator.pop(context);
+                 signup(name: usernameController.text, email: emailController.text, password: passwordController.text, confirmPassword: confirmPasswordController.text, context: context);
+                 clear();
+
                   }, child: Text(
                   "Sign up",
                   style: TextStyle(color: Colors.white, fontSize: 18),),style:ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent,foregroundColor: Colors.white) ,),

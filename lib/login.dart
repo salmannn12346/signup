@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:signup/Signupp.dart';
+import 'package:signup/services.dart';
+import 'package:signup/forgotpassword.dart';
+
 
 class LoginUp extends StatefulWidget {
   const LoginUp({super.key});
@@ -9,6 +12,8 @@ class LoginUp extends StatefulWidget {
 }
 
 class _LoginUpState extends State<LoginUp> {
+  final TextEditingController emailController =TextEditingController();
+  final TextEditingController passwordController =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,14 +27,18 @@ class _LoginUpState extends State<LoginUp> {
               Text("Login to your account",style: TextStyle(fontSize: 17,wordSpacing: 3,fontWeight: FontWeight.bold),),
               SizedBox(height: 40,),
               Align( alignment:Alignment.topLeft,child: Text("Email",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)),
-              TextField( decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8))),),
+              TextField( controller:emailController,decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8))),),
               Align( alignment:Alignment.topLeft,child: Text("Password",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)),
-              TextField( decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8))),),
-              SizedBox(height: 40,),
+              TextField( controller:passwordController,decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8))),),
+              SizedBox(height: 15,),
+              Align(alignment:Alignment.topRight,child: TextButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Forgot()));
+              }, child: Text("Forgort password",style: TextStyle(fontSize: 17),))),
+              SizedBox(height: 15,),
               SizedBox(width:2000,height:80,child: ElevatedButton(onPressed:(){
-                Navigator.pop(context);
+                login(email: emailController.text, password: passwordController.text, context: context);
               }, child: Text("Login",style: TextStyle(fontSize: 20,color: Colors.white,),),style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent,elevation: 8),)),
-              SizedBox(height: 30,),
+              SizedBox(height: 10,),
               Container(child: Row(children: [Text("Don't have an account?",style: TextStyle(fontSize: 17,),),TextButton(onPressed: (){ Navigator.push(context, MaterialPageRoute(builder:(context)=>SignUp()));},
                 child: Text("Sign up",
                   style: TextStyle(color: Colors.black,fontSize: 21,fontWeight: FontWeight.bold),),
